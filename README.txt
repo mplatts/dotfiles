@@ -1,0 +1,1 @@
+ln -s /Users/mplatts/Dropbox/dotfiles/zsh/ /Users/mplatts/.yadr/custom/zsh
