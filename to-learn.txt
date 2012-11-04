@@ -1,0 +1,3 @@
+lsg = ls grep <word>
+psg = ps aux | grep <word>
+z <recent path> = autocomplete common paths
