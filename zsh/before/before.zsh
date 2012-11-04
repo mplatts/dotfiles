@@ -9,4 +9,5 @@ plugins=(osx ruby vagrant $plugins)
 
 # set your theme.
 export ZSH_THEME="platts"
+ssh-add > /dev/null 2>&1
 
