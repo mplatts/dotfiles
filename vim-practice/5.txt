@@ -1,0 +1,34 @@
+vit = select within tags
+<tag> Hi there </tag>
+<p>
+  fjekwj 
+</p>
+
+vat = select within and the tags
+<tag> Hi there </tag>
+<p>
+  fjekwj 
+</p>
+
+vit and vat all of these: change to a and b
+<div class="hi">Hi there</div>
+<div class="hi">Hi there</div>
+<div class="hi">Hi there</div>
+<div class="hi">Hi there</div>
+<div class="hi">Hi there</div>
+<div class="hi">Hi there</div>
+<div class="hi">Hi there</div>
+<div class="hi">Hi there</div>
+<div class="hi">Hi there</div>
+<div class="hi">Hi there</div>
+<div class="hi">Hi there</div>
+<div class="hi">Hi there</div>
+<div class="hi">Hi there</div>
+<div class="hi">Hi there</div>
+<div class="hi">Hi there</div>
+<div class="hi">Hi there</div>
+<div class="hi">Hi there</div>
+<div class="hi">Hi there</div>
+<div class="hi">Hi there</div>
+<div class="hi">Hi there</div>
+<div class="hi">Hi there</div>

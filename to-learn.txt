@@ -1,3 +1,9 @@
 lsg = ls grep <word>
 psg = ps aux | grep <word>
 z <recent path> = autocomplete common paths
+!$ = last argument
+^old^new = rerun old argument but replace 'old' with 'new'
+!5:s/old/new/ = command 5 from history - replace old with new
+dirs -v = list latest dirs - cd ~1 to get to the dir
+
+awesome tips: http://www.rayninfo.co.uk/tips/zshtips.html

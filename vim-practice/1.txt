@@ -1,0 +1,88 @@
+shift-r allows you to type over what is already there. Change the following to percentages:
+
+10em 20em 30px 30em 
+10em 20em 30px 30em 
+10em 20em 30px 30em 
+10em 20em 30px 30em 
+10em 20em 30px 30em 
+
+shift-j jumps the bottom line to the current line - appending it on the end. get all the numbers into one line:
+12s
+
+1
+2
+3
+4
+5 
+6 
+7 
+8 
+9 
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+
+you can indent while in insert mode with ctrl-d and ctrl t. Indent the following to make a stair case
+31s
+
+_
+|_
+|_
+|_
+|_
+                                                  |_
+                                                  |_
+                                                  |_
+
+( and  ) navigate sentences...not sure how that works with code...
+fjewklfjwelkfjew lkfjewl fklewjf lkwejfwklfj welkfjewlkfj weklfjew ;lfkjwe. fejwklftafjkla ewlkfj w;lafj  
+
+{ and } navigate paragraphs
+sdfkljk lfj ewlkf jwe
+efjwlkf jewlfkj 
+
+wfkjwel kjewlkfj 
+
+wefjlwkej 
+
+wefjl
+
+
+when in v mode - hit o to change end
+fwejklfj wjfekl jkjewf lkjewlk f
+
+
+searching - search forward with / and backward with ?
+
+findme
+
+start here
+
+findmetoo
+
+* finds the current word forward - while # goes backward
+
+hi
+hi
+hi
+
+
+v/}/e - use search to highlight
+afjelwk fjewlkjfkljklfe jlfjfej l
+ewlfjkl jw
+jkflew }
+
+
+:s/find/replace/g10 - can replace in next 10 lines only
+
+can also replace within selection - just v some stuff and go s/find/replace/gc 
+
+:g/hi will bring up all lines matching the pattern of hi

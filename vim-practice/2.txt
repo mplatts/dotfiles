@@ -1,0 +1,27 @@
+y$ = copy to the end of the line - copy from word 3 onwards and paste on next line
+2:46
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Donec eu diam interdum turpis hendrerit ultricies.
+Vivamus viverra elit in ligula dapibus malesuada.
+Vestibulum eget velit ac augue egestas tincidunt imperdiet nec justo.
+Nullam eu nunc ac massa aliquet varius vel eget purus.
+Curabitur viverra rutrum nibh, at porttitor nibh tempus vel.
+Etiam viverra eros nec nisi congue rutrum id vel lorem.
+Nulla nec felis nisi, nec porta urna.
+Vivamus iaculis quam at est sodales quis mattis elit sollicitudin.
+Maecenas a lectus tellus, id convallis justo.
+Sed vitae dui vitae ipsum aliquet consequat.
+Donec lobortis magna eu massa viverra commodo.
+Cras dictum magna sed purus accumsan vel congue nisi sodales.
+Cras tincidunt ultrices nisl, in rutrum enim imperdiet vel.
+Maecenas vel libero sapien, adipiscing sagittis nunc.
+Maecenas egestas porttitor sem, sed malesuada metus blandit aliquet.
+Morbi blandit lorem non magna sagittis venenatis.
+Aenean mattis elit eu arcu feugiat a interdum felis semper.
+Curabitur dictum adipiscing augue, ut faucibus urna lobortis vel.
+Sed malesuada neque augue, at laoreet arcu.
+Nullam pulvinar turpis eu mauris facilisis quis luctus enim eleifend.
+Donec porta nibh egestas enim blandit a eleifend sapien laoreet.
+Curabitur laoreet ultricies augue, a vestibulum odio gravida eget.
+Sed sit amet quam quis orci suscipit tincidunt in id libero.

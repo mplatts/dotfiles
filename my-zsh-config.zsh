@@ -1,18 +1,20 @@
-source ./my-zsh-theme.zsh
+source /Users/mplatts/Dropbox/dotfiles/my-zsh-theme.zsh
 
 # Boxdice:
 alias depl='cd ~/Sites/Deploy-Scripts'
 alias pro='cd ~/Sites/boom_all/pro'
 alias crm='cd ~/Sites/boom_crm/'
+alias web='cd ~/Sites/webtempest/'
 
 api-start(){
-  nginx-start
   api
+  echo "Executing: bundle exec unicorn -p 8090"
   bundle exec unicorn -p 8090
 }
 
 pro-start(){
   pro
+  echo "Executing: bundle exec unicorn -p 8091"
   bundle exec unicorn -p 8091
 }
 
@@ -31,35 +33,44 @@ alias keeper='ssh keeper'
 
 api(){
   cd ~/Sites/boom_all/api
-  rvm use system
 }
-alias tail_error="tail -f /var/log/php/php_errors.log"
-alias tail_access="tail -f /usr/local/Cellar/nginx/1.2.2/logs/access.log"
+alias tail-error="tail -f /var/log/php/php_errors.log"
+alias tail-access="tail -f /usr/local/Cellar/nginx/1.2.2/logs/access.log"
+alias tail-mysql="tail -f /var/log/mysql.log"
 alias bdip="cat /Users/mplatts/Dropbox/BoxDice/servers.txt"
 
-alias nginx-stop="/usr/local/Cellar/nginx/1.2.2/sbin/nginx -s stop"
-alias nginx-start="/usr/local/Cellar/nginx/1.2.2/sbin/nginx"
+alias nginx-stop="/usr/local/Cellar/nginx/1.2.7/sbin/nginx -s stop"
+alias nginx-start="/usr/local/Cellar/nginx/1.2.7/sbin/nginx"
+alias fpm-stop="launchctl unload -w ~/Library/LaunchAgents/homebrew-php.josegonzalez.php53.plist"
+alias fpm-start="launchctl load -w ~/Library/LaunchAgents/homebrew-php.josegonzalez.php53.plist"
+alias pg-start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias pg-stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
+alias mysql-start='mysql.server start'
+alias mysql-stop='mysql.server stop'
+alias mysql-restart='mysql.server restart'
+alias assets='RAILS_ENV=production bundle exec rake assets:precompile'
 
-php-reload(){
+fpm-restart(){
 	launchctl unload -w ~/Library/LaunchAgents/homebrew-php.josegonzalez.php53.plist
 	launchctl load -w ~/Library/LaunchAgents/homebrew-php.josegonzalez.php53.plist
 }
 
+
 # Home
 alias sky="cd ~/Sites/sky_writer/"
-alias mysql-start='sudo mysqld_safe --innodb_file_per_table=1 &'
-alias mysql-stop='ps -ef | grep mysqld | grep -v grep | awk '{print "sudo kill "$2}' | sh'
 alias memcached='/usr/local/bin/memcached'
 
 
 # Common:
+alias st='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+alias be='bundle exec'
 alias hosts='sudo vim /private/etc/hosts'
-alias ea='subl ~/.zsh.after/after.zsh'
 alias reload='source ~/.zshrc'
-alias sublime='cd /Users/mplatts/Library/Application\ Support/Sublime\ Text\ 2/Packages/'
+alias sublime='cd /Users/mplatts/Library/Application\ Support/Sublime\ Text\ 3/Packages/'
 alias snippets='subl /Users/mplatts/Library/Application\ Support/Sublime\ Text\ 2/Packages/'
 alias gemo='bundle open'
 alias vimplugins='cd /Users/mplatts/.yadr/vim/bundle'
+alias snip='mvim ~/Dropbox/dotfiles/vim/after/snippets'
 alias learn='cat ~/Dropbox/dotfiles/to-learn.txt'
 alias elearn='subl ~/Dropbox/dotfiles/to-learn.txt'
 alias cheats='subl ~/Dropbox/cheats'
@@ -70,6 +81,14 @@ alias zr='source ~/.zshrc'
 # Servers
 alias quicktimesheets='ssh -i ~/.ssh/quicktimesheets.pem insight4@lb1.ovm.qiktimes.com'
 alias malz='ssh deploy@50.116.45.193' # Personal Linode
+
+# PATH
+# Postgres app
+PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
+# Homebrew
+PATH="/usr/local/bin:$PATH" 
+# NPM
+PATH="/usr/local/share/npm/bin/:$PATH"
 
 # Text Editor
 alias subl-keymap='subl ~/Dropbox/sublime_settings/Matts-keymap.sublime-keymap'
@@ -105,9 +124,12 @@ cdpath=($HOME/Sites/ $HOME/.rvm/gems/ruby-1.9.3-p125/gems/)
 # Fancy globbing http://linuxshellaccount.blogspot.com/2008/07/fancy-globbing-with-zsh-on-linux-and.html
 setopt extendedglob
 
-export EDITOR='subl'
+export EDITOR='st'
 
-alias install_dotfiles='cd Dropbox/dotfiles && thor dotfiles:install'
+alias install_dotfiles='cd ~/Dropbox/dotfiles && thor dotfiles:install'
+alias dot='cd ~/Dropbox/dotfiles'
+alias dotv='vim ~/Dropbox/dotfiles'
+alias dots='st ~/Dropbox/dotfiles'
 
 # Show human friendly numbers and colors
 alias df='df -h'
@@ -189,4 +211,14 @@ alias co='script/console --irb=pry' # Rails 2
 # to save some time
 alias mctags=~/.bin/run_tags.rb #'/opt/local/bin/ctags -Rf ./tags *'
 
+# Options
+
+# automatically enter directories without cd
+setopt auto_cd
+
+# ignore duplicate history entries
+setopt histignoredups
+
+# keep TONS of history
+export HISTSIZE=4096
 

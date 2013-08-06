@@ -1,0 +1,52 @@
+shift-d deletes the rest of the line - delete from D onwards
+
+fskj ejfklj D jdklwfjew lk; lkfwej
+ekj D jdklfj lkwej 
+def Derp
+enD this now
+()D jLfwefj klefw
+fskj ejfklj D jdklwfjew lk; lkfwej
+ekj D jdklfj lkwej 
+def Derp
+enD this now
+()D jLfwefj klefw
+fskj ejfklj D jdklwfjew lk; lkfwej
+ekj D jdklfj lkwej 
+def Derp
+enD this now
+()D jLfwefj klefw
+fskj ejfklj D jdklwfjew lk; lkfwej
+ekj D jdklfj lkwej 
+def Derp
+enD this now
+()D jLfwefj klefw
+
+shift-c deletes the rest of the line and goes into insert mode
+
+fskj ejfklj C jdklwfjew lk; lkfwej
+ekj C jdklfj lkwej 
+def Cerp
+enC this now
+()C jLfwefj klefw
+fskj ejfklj C jdklwfjew lk; lkfwej
+ekj C jdklfj lkwej 
+def Cerp
+enC this now
+()C jLfwefj klefw
+fskj ejfklj C jdklwfjew lk; lkfwej
+ekj C jdklfj lkwej 
+def Cerp
+enC this now
+()C jLfwefj klefw
+fskj ejfklj C jdklwfjew lk; lkfwej
+ekj C jdklfj lkwej 
+def Cerp
+enC this now
+()C jLfwefj klefw
+fskj ejfklj C jdklwfjew lk; lkfwej
+ekj C jdklfj lkwej 
+def Cerp
+enC this now
+()C jLfwefj klefw
+
+
