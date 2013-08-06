@@ -77,37 +77,3 @@ class Dotfiles < Thor
   end
 end
 
-# Dir.pwd => /Users/mplatts/Dropbox/dotfiles
-
- # create_file "filename.txt", data
- #    create_file "filename.txt" do
- #      data
- #    end
-
- #    remove_file "filename.txt"
- #    copy_file "from.rb", "to.rb"
- #    template "source.erb", "dest.html"      # Parses an ERB file
-
- #    directory "from/", "to/"                # Copies a directory
- #    empty_directory "dir/"                  # Creates a directory
-
- #    get "http://x.com/103208", "out.rb"     # Download a file
- #    get "http://x.com/103208", "out.rb" do
- #      content.split("\n").first
- #    end
-
- #    run "rake test"                         # Run a command
- #    run_ruby_script "foo.rb"                # Takes into account Win32
-
- #    thor :install                           # Invoke a Thor task
-
- #    gsub_file "foo.rb", /user=.*/, "user=foo"
- #    prepend_file "foo.sh", "#!/usr/bin/env sh"
- #    inject_into_file "Gemfile", "gem 'rails'", after: "gem 'mysql'"
- #    inject_into_class "controller.rb", Controller do
- #      "  attr_reader :foo"
- #    end
-
- #    inside "dir/" do                        # Do stuff inside a path
- #      # ...
- #    end
