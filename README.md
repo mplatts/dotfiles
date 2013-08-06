@@ -1,3 +1,3 @@
 ## Matt's Dotfiles ##
-gem install thor
-thor list
+1. gem install thor
+2. thor list
