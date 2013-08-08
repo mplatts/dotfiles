@@ -34,7 +34,7 @@ Bundle 'ervandew/supertab'
 " Bundle 'Valloric/YouCompleteMe'
 Bundle 'juvenn/mustache.vim'
 " Bundle 'mhinz/vim-signify'
-Bundle 'xolox/vim-session'
+" Bundle 'xolox/vim-session'
 
 " shows '4/5 matches' on footer when searching:
 Bundle 'IndexedSearch'

@@ -18,7 +18,9 @@ class Dotfiles < Thor
   OTHER_FILES = [
     "aprc", # Awesome Print
     "gitconfig",
-    "ctags"
+    "gitignore_global",
+    "ctags",
+    "rspec"
   ]
 
   BACKUP_FOLDER = "dotfiles_backup"
