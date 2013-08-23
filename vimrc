@@ -12,7 +12,8 @@ Bundle 'twe4ked/vim-peepopen'
 Bundle 'skwp/vim-easymotion'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
-Bundle 'majutsushi/tagbar'
+" Bundle 'majutsushi/tagbar'
+" Bundle 'lukaszkorecki/CoffeeTags'
 Bundle 'chriseppstein/vim-haml'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
@@ -23,6 +24,7 @@ Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'Yggdroot/indentLine'
 Bundle 'taiansu/nerdtree-ag'
 Bundle 'cakebaker/scss-syntax.vim'
+" Bundle 'airblade/vim-gitgutter'
 
 Bundle 'Townk/vim-autoclose'
 " Bundle 'Raimondi/delimitMate'
@@ -40,7 +42,7 @@ Bundle 'juvenn/mustache.vim'
 Bundle 'IndexedSearch'
 
 " Not practiced yet
-Bundle 'mattn/zencoding-vim'
+Bundle 'mattn/emmet-vim'
 Bundle 'tpope/vim-surround'
 " Bundle 'mileszs/ack.vim'
 Bundle 'rking/ag.vim'
@@ -124,16 +126,15 @@ nnoremap <silent> vv <C-w>v " Create window splits easier
 nnoremap <silent> ss <C-w>s
 map <Leader>ct :!ctags -R .<CR> " ,ct = remake ctags
 
-
 " TagList
-nnoremap <silent> <Leader>\ :TlistToggle<CR>                       " Open list of methods
+" nnoremap <silent> <Leader>\ :TlistToggle<CR>                       " Open list of methods
 
 " CtrlP
 nnoremap <leader>. :CtrlPTag<cr>
 nmap <Space>p :CtrlP<CR>
 
 " Tagbar
-nnoremap <silent> <Leader>b :TagbarToggle<CR>
+" nnoremap <silent> <Leader>b :TagbarToggle<CR>
 
 " EasyMotion
 call EasyMotion#InitOptions({
@@ -262,3 +263,20 @@ nnoremap <silent> ,f <C-]>
 
 " use ,F to jump to tag in a vertical split
 nnoremap <silent> ,F :let word=expand("<cword>")<CR>:vsp<CR>:wincmd w<cr>:exec("tag ". word)<cr>
+
+" For the coffeetags plugin:
+if executable('coffeetags')
+  let g:tagbar_type_coffee = {
+        \ 'ctagsbin' : 'coffeetags',
+        \ 'ctagsargs' : '',
+        \ 'kinds' : [
+        \ 'f:functions',
+        \ 'o:object',
+        \ ],
+        \ 'sro' : ".",
+        \ 'kind2scope' : {
+        \ 'f' : 'object',
+        \ 'o' : 'object',
+        \ }
+        \ }
+endif

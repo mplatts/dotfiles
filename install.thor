@@ -20,7 +20,8 @@ class Dotfiles < Thor
     "gitconfig",
     "gitignore_global",
     "ctags",
-    "rspec"
+    "rspec",
+    "gemrc"
   ]
 
   BACKUP_FOLDER = "dotfiles_backup"

@@ -1,9 +1,12 @@
 source /Users/mplatts/Dropbox/dotfiles/my-zsh-theme.zsh
 
+# Quipper
+alias canary='open /Applications/Google\ Chrome\ Canary.app --args --disable-web-security'
+
 # Boxdice:
 alias depl='cd ~/Sites/Deploy-Scripts'
-alias pro='cd ~/Sites/boom_all/pro'
-alias crm='cd ~/Sites/boom_crm/'
+alias pro='cd ~/Sites/boom-test/boom_all/pro'
+alias crm='cd ~/Sites/boom-test/boom_crm/'
 alias web='cd ~/Sites/webtempest/'
 
 api-start(){
@@ -45,6 +48,7 @@ alias fpm-stop="launchctl unload -w ~/Library/LaunchAgents/homebrew-php.josegonz
 alias fpm-start="launchctl load -w ~/Library/LaunchAgents/homebrew-php.josegonzalez.php53.plist"
 alias pg-start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias pg-stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
+alias memcached='/usr/local/opt/memcached/bin/memcached'
 alias mysql-start='mysql.server start'
 alias mysql-stop='mysql.server stop'
 alias mysql-restart='mysql.server restart'
@@ -86,9 +90,9 @@ alias malz='ssh deploy@50.116.45.193' # Personal Linode
 # Postgres app
 PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 # Homebrew
-PATH="/usr/local/bin:$PATH" 
+PATH="/usr/local/bin:$PATH"
 # NPM
-PATH="/usr/local/share/npm/bin/:$PATH"
+PATH="/usr/local/share/npm/bin:$PATH"
 
 # Text Editor
 alias subl-keymap='subl ~/Dropbox/sublime_settings/Matts-keymap.sublime-keymap'
