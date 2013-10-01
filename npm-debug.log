@@ -1,0 +1,92 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/0.10.2/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'yo',
+1 verbose cli   'grunt-cli',
+1 verbose cli   'bower' ]
+2 info using npm@1.2.15
+3 info using node@v0.10.2
+4 verbose read json /usr/local/share/npm/lib/package.json
+5 verbose read json /usr/local/share/npm/lib/package.json
+6 verbose cache add [ 'yo', null ]
+7 verbose cache add name=undefined spec="yo" args=["yo",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: 'yo',
+8 verbose parsed url   path: 'yo',
+8 verbose parsed url   href: 'yo' }
+9 verbose cache add [ 'grunt-cli', null ]
+10 verbose cache add name=undefined spec="grunt-cli" args=["grunt-cli",null]
+11 verbose parsed url { protocol: null,
+11 verbose parsed url   slashes: null,
+11 verbose parsed url   auth: null,
+11 verbose parsed url   host: null,
+11 verbose parsed url   port: null,
+11 verbose parsed url   hostname: null,
+11 verbose parsed url   hash: null,
+11 verbose parsed url   search: null,
+11 verbose parsed url   query: null,
+11 verbose parsed url   pathname: 'grunt-cli',
+11 verbose parsed url   path: 'grunt-cli',
+11 verbose parsed url   href: 'grunt-cli' }
+12 verbose cache add [ 'bower', null ]
+13 verbose cache add name=undefined spec="bower" args=["bower",null]
+14 verbose parsed url { protocol: null,
+14 verbose parsed url   slashes: null,
+14 verbose parsed url   auth: null,
+14 verbose parsed url   host: null,
+14 verbose parsed url   port: null,
+14 verbose parsed url   hostname: null,
+14 verbose parsed url   hash: null,
+14 verbose parsed url   search: null,
+14 verbose parsed url   query: null,
+14 verbose parsed url   pathname: 'bower',
+14 verbose parsed url   path: 'bower',
+14 verbose parsed url   href: 'bower' }
+15 silly lockFile c41975d1-yo yo
+16 verbose lock yo /Users/mplatts/.npm/c41975d1-yo.lock
+17 silly lockFile 671ef8ac-grunt-cli grunt-cli
+18 verbose lock grunt-cli /Users/mplatts/.npm/671ef8ac-grunt-cli.lock
+19 silly lockFile 206e3ce5-bower bower
+20 verbose lock bower /Users/mplatts/.npm/206e3ce5-bower.lock
+21 silly lockFile c41975d1-yo yo
+22 verbose addNamed [ 'yo', '' ]
+23 verbose addNamed [ null, '' ]
+24 silly lockFile d937c28e-yo yo@
+25 verbose lock yo@ /Users/mplatts/.npm/d937c28e-yo.lock
+26 silly lockFile 671ef8ac-grunt-cli grunt-cli
+27 verbose addNamed [ 'grunt-cli', '' ]
+28 verbose addNamed [ null, '' ]
+29 silly lockFile d63f3d0b-grunt-cli grunt-cli@
+30 verbose lock grunt-cli@ /Users/mplatts/.npm/d63f3d0b-grunt-cli.lock
+31 silly lockFile 206e3ce5-bower bower
+32 verbose addNamed [ 'bower', '' ]
+33 verbose addNamed [ null, '' ]
+34 silly lockFile 1240aab1-bower bower@
+35 verbose lock bower@ /Users/mplatts/.npm/1240aab1-bower.lock
+36 silly lockFile d937c28e-yo yo@
+37 error Error: EACCES, open '/Users/mplatts/.npm/d937c28e-yo.lock'
+37 error  { [Error: EACCES, open '/Users/mplatts/.npm/d937c28e-yo.lock']
+37 error   errno: 3,
+37 error   code: 'EACCES',
+37 error   path: '/Users/mplatts/.npm/d937c28e-yo.lock' }
+38 error Please try running this command again as root/Administrator.
+39 error System Darwin 12.4.0
+40 error command "/usr/local/Cellar/node/0.10.2/bin/node" "/usr/local/bin/npm" "install" "-g" "yo" "grunt-cli" "bower"
+41 error cwd /Users/mplatts/Dropbox/dotfiles
+42 error node -v v0.10.2
+43 error npm -v 1.2.15
+44 error path /Users/mplatts/.npm/d937c28e-yo.lock
+45 error code EACCES
+46 error errno 3
+47 error stack Error: EACCES, open '/Users/mplatts/.npm/d937c28e-yo.lock'
+48 verbose exit [ 3, true ]

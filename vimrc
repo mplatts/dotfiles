@@ -26,6 +26,10 @@ Bundle 'taiansu/nerdtree-ag'
 Bundle 'cakebaker/scss-syntax.vim'
 " Bundle 'airblade/vim-gitgutter'
 
+Bundle 'elzr/vim-json'
+let g:vim_json_syntax_conceal = 0 " goes with above vim-json plugin
+:setlocal foldmethod=syntax
+
 Bundle 'Townk/vim-autoclose'
 " Bundle 'Raimondi/delimitMate'
 
@@ -170,6 +174,17 @@ let g:ctrlp_use_caching = 1       " enable caching
 let g:ctrlp_clear_cache_on_exit=0     " speed up by not removing clearing cache evertime
 let g:ctrlp_show_hidden = 1       " show me dotfiles
 let g:ctrlp_mruf_max = 250        " number of recently opened files
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|doc'
+
+" Ag
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+  let g:ackprg = 'ag --nogroup --column'
+
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+endif
+
 
 " Powerline
 let g:Powerline_symbols='fancy'

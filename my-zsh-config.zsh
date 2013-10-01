@@ -2,12 +2,17 @@ source /Users/mplatts/Dropbox/dotfiles/my-zsh-theme.zsh
 
 # Quipper
 alias canary='open /Applications/Google\ Chrome\ Canary.app --args --disable-web-security'
+alias qlearn='cd ~/Sites/quipper/q-learn-play'
 
 # Boxdice:
 alias depl='cd ~/Sites/Deploy-Scripts'
 alias pro='cd ~/Sites/boom-test/boom_all/pro'
 alias crm='cd ~/Sites/boom-test/boom_crm/'
 alias web='cd ~/Sites/webtempest/'
+
+# Personal
+alias notes='vim ~/Dropbox/Notes'
+alias goals='mvim ~/Dropbox/goals.yml'
 
 api-start(){
   api
@@ -123,7 +128,7 @@ bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
 
 # Automatically cd to frequently used directories http://robots.thoughtbot.com/post/10849086566/cding-to-frequently-used-directories-in-zsh
 setopt auto_cd
-cdpath=($HOME/Sites/ $HOME/.rvm/gems/ruby-1.9.3-p125/gems/)
+cdpath=($HOME/Sites/ $HOME/.rvm/gems/ruby-2.0.0-p0/gems/)
 
 # Fancy globbing http://linuxshellaccount.blogspot.com/2008/07/fancy-globbing-with-zsh-on-linux-and.html
 setopt extendedglob
