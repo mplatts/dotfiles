@@ -1,8 +1,20 @@
 source /Users/mplatts/Dropbox/dotfiles/my-zsh-theme.zsh
 
+# Web Dev
+alias browserstack='java -jar ~/Downloads/BrowserStackTunnel.jar h5sjZnQq62YoSWtZKoUW 0.0.0.0,8080,0'
+alias putJSON="curl -X PUT -H 'Content-Type: application/json'"
+alias postJSON="curl -X POST -H 'Content-Type: application/json'"
+alias grt="grunt build && grunt watch"
+
 # Quipper
-alias canary='open /Applications/Google\ Chrome\ Canary.app --args --disable-web-security'
 alias qlearn='cd ~/Sites/quipper/q-learn-play'
+alias edge='heroku run console --app quipper-api-edge'
+alias schema='cd ~/Sites/quipper/schema'
+alias qall='cd ~/Sites/quipper/qall'
+alias ql='cd ~/Sites/quipper/qall/apps/qlearn-web'
+alias qc='cd ~/Sites/quipper/qall/apps/qcreate'
+alias qa='cd ~/Sites/quipper/qall/apps/api'
+alias lp='cd ~/Sites/quipper/quipperschool-www'
 
 # Boxdice:
 alias depl='cd ~/Sites/Deploy-Scripts'
@@ -13,6 +25,15 @@ alias web='cd ~/Sites/webtempest/'
 # Personal
 alias notes='vim ~/Dropbox/Notes'
 alias goals='mvim ~/Dropbox/goals.yml'
+
+wtigo(){
+  git pull origin dev
+  wti push
+  wti pull
+  git add -A
+  git commit -m 'update translations'
+  git push origin dev
+}
 
 api-start(){
   api
@@ -57,6 +78,7 @@ alias memcached='/usr/local/opt/memcached/bin/memcached'
 alias mysql-start='mysql.server start'
 alias mysql-stop='mysql.server stop'
 alias mysql-restart='mysql.server restart'
+alias redis-start='redis-server /usr/local/etc/redis.conf'
 alias assets='RAILS_ENV=production bundle exec rake assets:precompile'
 
 fpm-restart(){
@@ -93,7 +115,8 @@ alias malz='ssh deploy@50.116.45.193' # Personal Linode
 
 # PATH
 # Postgres app
-PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
+export PATH="/Applications/Postgres.app/Contents/MacOS/:$PATH"
+export PGHOST=localhost
 # Homebrew
 PATH="/usr/local/bin:$PATH"
 # NPM

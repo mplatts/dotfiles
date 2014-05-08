@@ -12,8 +12,8 @@ Bundle 'twe4ked/vim-peepopen'
 Bundle 'skwp/vim-easymotion'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
-" Bundle 'majutsushi/tagbar'
-" Bundle 'lukaszkorecki/CoffeeTags'
+Bundle 'majutsushi/tagbar'
+Bundle 'lukaszkorecki/CoffeeTags'
 Bundle 'chriseppstein/vim-haml'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
@@ -24,38 +24,49 @@ Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'Yggdroot/indentLine'
 Bundle 'taiansu/nerdtree-ag'
 Bundle 'cakebaker/scss-syntax.vim'
+Bundle 'digitaltoad/vim-jade'
+Bundle 'docunext/closetag.vim'
+Bundle 'skwp/vim-iterm-rspec'
+
+" Vim session needs both of these
+Bundle 'xolox/vim-misc'
+Bundle 'xolox/vim-session'
+
+" Git gutter
+Bundle 'mhinz/vim-signify'
+
+" When you have split windows and want to zoom into one window
+Bundle 'vim-scripts/ZoomWin'
 " Bundle 'airblade/vim-gitgutter'
 
 Bundle 'elzr/vim-json'
 let g:vim_json_syntax_conceal = 0 " goes with above vim-json plugin
 :setlocal foldmethod=syntax
 
-Bundle 'Townk/vim-autoclose'
-" Bundle 'Raimondi/delimitMate'
+" Bundle 'Townk/vim-autoclose'
+Bundle 'Raimondi/delimitMate'
 
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'kien/ctrlp.vim'
-" Bundle 'Valloric/MatchTagAlways'
 Bundle 'ervandew/supertab'
-" Bundle 'Valloric/YouCompleteMe'
 Bundle 'juvenn/mustache.vim'
-" Bundle 'mhinz/vim-signify'
-" Bundle 'xolox/vim-session'
 
 " shows '4/5 matches' on footer when searching:
 Bundle 'IndexedSearch'
 
+" When you type :s/word/new_word all the instances of 'word' are highlighted
+Bundle 'osyo-manga/vim-over'
+
 " Not practiced yet
 Bundle 'mattn/emmet-vim'
 Bundle 'tpope/vim-surround'
-" Bundle 'mileszs/ack.vim'
 Bundle 'rking/ag.vim'
 Bundle 'tpope/vim-fugitive'
+Bundle 'gregsexton/gitv'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-endwise'
 Bundle 'terryma/vim-multiple-cursors'
-" Bundle 'vim-scripts/grep.vim'
-" Bundle 'tpope/vim-rails.git'
+Bundle 'goldfeld/vim-seek'
 
 " 4 below required for snipmate
 Bundle "MarcWeber/vim-addon-mw-utils"
@@ -74,13 +85,14 @@ syntax enable
 set background=dark
 
 if has("gui_running")
+  colorscheme sorcerer
+"  colorscheme gruvbox
 " colorscheme solarized
-" colorscheme codeschool
- colorscheme gruvbox
+"  colorscheme codeschool
 "  colorscheme flatland
 "  colorscheme jellybeans
   autocmd VimEnter * set guitablabel=%N:\ %t\ %M      " Show tab number (useful for Cmd-1, Cmd-2.. mapping)
-  set guifont=Monaco:h14,Ubuntu\ Mono:h18,Inconsolata:h17
+  set guifont=Monaco:h13,Ubuntu\ Mono:h18,Inconsolata:h17
   set guioptions-=r
   set guioptions-=L
   set guioptions-=T     " Disable the macvim toolbar
@@ -94,8 +106,46 @@ endif
 
 
 " BINDINGS
+
+" TIPS
+" map = creates a key map that works in normal, visual, select and operator pending modes
+" map! = creates a key map that works in insert and command-line mode
+" A better alternative than using the 'map' and 'map!' commands is to use mode-specific map commands
+" nmap = mapping for normal mode
+" :nmap - Display normal mode maps
+" :imap - Display insert mode maps
+" :vmap - Display visual and select mode maps
+" :smap - Display select mode maps
+" :xmap - Display visual mode maps
+" :cmap - Display command-line mode maps
+" :omap - Display operator pending mode maps
+
 " Cool time savers
-vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>"
+vnoremap <C-r> hy:%s/<C-r>h//gc<left><left><left>
+
+" open vimrc in split window
+:nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+
+" updates changes you made in vimrc in vim
+:nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" hit ,v to visually select the current word
+nnoremap <leader>v viw
+
+" OverCommandLine
+nnoremap <leader>r :OverCommandLine<cr>%s/
+
+" Insert mode with indent
+nnoremap <silent>i @=empty(getline("."))? "S" : "i"<CR>
+nnoremap <silent>I @=empty(getline("."))? "S" : "I"<CR>
+nnoremap <silent>a @=empty(getline("."))? "S" : "a"<CR>
+nnoremap <silent>A @=empty(getline("."))? "S" : "A"<CR>
+
+" ZoomWin
+nnoremap <leader>z :ZoomWin<cr>
+
+" Vim rspec
+map <Leader>t :RunItermSpec<cr>
 
 " NerdTreeTabs
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
@@ -103,10 +153,8 @@ nmap <D-N> <plug>NERDTreeTabsToggle<CR>                            " Cmd-n for n
 nnoremap <silent> <C-\> :NERDTreeFind<CR>:vertical res 50<CR> " Open the project tree and expose current file in the nerdtree with Ctrl-\
 
 " Navigation
-nmap <silent> fj 25j " f = fast movement
-nmap <silent> fk 25k
-nmap <silent> fl $
-nmap <silent> fh ^
+nnoremap <leader>l $
+nnoremap <leader>h ^
 
 noremap <leader>W :w !sudo tee % > /dev/null<CR>    " Save a file as root (,W)
 nnoremap <silent> // :noh<CR>" Clear current search highlight by double tapping //
@@ -130,15 +178,12 @@ nnoremap <silent> vv <C-w>v " Create window splits easier
 nnoremap <silent> ss <C-w>s
 map <Leader>ct :!ctags -R .<CR> " ,ct = remake ctags
 
-" TagList
-" nnoremap <silent> <Leader>\ :TlistToggle<CR>                       " Open list of methods
-
 " CtrlP
 nnoremap <leader>. :CtrlPTag<cr>
 nmap <Space>p :CtrlP<CR>
 
 " Tagbar
-" nnoremap <silent> <Leader>b :TagbarToggle<CR>
+nnoremap <silent> <Leader>b :TagbarToggle<CR>
 
 " EasyMotion
 call EasyMotion#InitOptions({
@@ -232,6 +277,7 @@ let g:delimitMate_expand_space = 1
 " CORE ENVIRONMENT
 filetype plugin on
 set encoding=utf-8
+" set cursorline cursorcolumn
 set ruler "see line information
 set smartcase
 set autoindent "indentation settings
@@ -279,7 +325,8 @@ nnoremap <silent> ,f <C-]>
 " use ,F to jump to tag in a vertical split
 nnoremap <silent> ,F :let word=expand("<cword>")<CR>:vsp<CR>:wincmd w<cr>:exec("tag ". word)<cr>
 
-" For the coffeetags plugin:
+nnoremap <silent> Q :call CloseWindowOrKillBuffer()<CR>
+
 if executable('coffeetags')
   let g:tagbar_type_coffee = {
         \ 'ctagsbin' : 'coffeetags',
